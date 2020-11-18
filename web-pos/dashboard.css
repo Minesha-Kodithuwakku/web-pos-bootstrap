@@ -6,6 +6,7 @@ body {
     width: 16px;
     height: 16px;
     vertical-align: text-bottom;
+
 }
 
 /*
@@ -20,11 +21,13 @@ body {
     z-index: 100; /* Behind the navbar */
     padding: 48px 0 0; /* Height of navbar */
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+
 }
 
 @media (max-width: 767.98px) {
     .sidebar {
         top: 5rem;
+
     }
 }
 
@@ -41,37 +44,44 @@ body {
     .sidebar-sticky {
         position: -webkit-sticky;
         position: sticky;
+
     }
 }
 
 .sidebar .nav-link {
     font-weight: 500;
     color: #333;
+
 }
 
 .sidebar .nav-link .feather {
     margin-right: 4px;
     color: #999;
+
 }
 
 .sidebar .nav-link.active {
     color: #007bff;
+
 }
 
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
     color: inherit;
+
 }
 
 .sidebar-heading {
     font-size: .75rem;
     text-transform: uppercase;
+
 }
 .input-group .input-group-addon {
     background-color: transparent;
     border-radius: 0;
     border-right-width: 0;
     border-color: gray;
+
 }
 .flatRed {
     background-color: gray;
@@ -91,6 +101,7 @@ body {
     width: 100%;
     text-align: left;
     margin-bottom: 10px;
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -111,12 +122,15 @@ body {
     .dashboard-stats .left {
         float: left;
         padding-top: 5px;
+
     }
     .dashboard-stats .left h3 {
         font-size: 20px;
+
     }
     .dashboard-stats .left h4 {
         font-size: 14px;
+
     }
     .dashboard-stats .right {
         position: absolute;
@@ -128,17 +142,16 @@ body {
         font-size: 38px;
         text-align: center;
         color: #FFFFFF;
+
     }
     .dashboard-stats .right i {
         vertical-align: middle;
         line-height: 107px;
     }
-    .nav-item{
-        padding: 5px;
-    }
-    #to-align{
-        margin-top: 10px;
-    }
+}
 
+
+#to-align{
+    margin-top: 10px;
 
 }

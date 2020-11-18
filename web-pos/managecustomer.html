@@ -1,10 +1,985 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html class="english">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"653e27187f",applicationID:"413349729"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+    <title>Demo - PHP Point Of Sale | Easy to use Online POS Software</title>
+    <link rel="icon" href="https://demo.phppointofsale.com/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+    <base href="https://demo.phppointofsale.com/" />
+
+    <style>
+        @page {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <style>
+        @media print {
+            .invoice-table-content{ page-break-inside: avoid !important; -webkit-page-break-inside: avoid !important; }
+            .panel_inventory_print_list .panel-body{padding:40px 30px !important; border: 0 !important;}
+            .panel_inventory_print_list .report-header{display:block !important;}
+        }
+    </style>
+
+    <link rel="icon" href="https://demo.phppointofsale.com/favicon.ico" type="image/x-icon"/>
+    <script type="text/javascript">
+
+        var APPLICATION_VERSION= "17.8";
+        var SITE_URL= "https://demo.phppointofsale.com/index.php";
+        var BASE_URL= "https://demo.phppointofsale.com/";
+        var CURRENT_URL = "https://demo.phppointofsale.com/index.php/customers";
+        var CURRENT_URL_RELATIVE = "customers";
+        var ENABLE_SOUNDS = false;
+        var JS_DATE_FORMAT = "MM\/DD\/YYYY";
+        var JS_TIME_FORMAT = "hh:mm a";
+        var LOCALE =  "en";
+        var MONEY_NUM_DECIMALS = 2;
+        var IS_MOBILE = false;
+        var ENABLE_QUICK_EDIT = false;
+        var PER_PAGE = 20;
+        var EMPLOYEE_PERSON_ID = "1";
+        var INVOICE_NO =  "111820224221";
+        var CONFIRM_CLONE = "Are you sure you want to clone this?";
+        var CONFIRM_IMAGE_DELETE = "Are you sure you want to delete this image?";
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://demo.phppointofsale.com/assets/css/all.css?1600967808" />
+    <script src="https://demo.phppointofsale.com/assets/js/all.js?1600967808" type="text/javascript" charset="UTF-8"></script>
+    <script>!function(w,d,i,s){function l(){if(!d.getElementById(i)){var f=d.getElementsByTagName(s)[0],e=d.createElement(s);e.type="text/javascript",e.async=!0,e.src="https://canny.io/sdk.js",f.parentNode.insertBefore(e,f)}}if("function"!=typeof w.Canny){var c=function(){c.q.push(arguments)};c.q=[],w.Canny=c,"complete"===d.readyState?l():w.attachEvent?w.attachEvent("onload",l):w.addEventListener("load",l,!1)}}(window,document,"canny-jssdk","script");</script>
+
+    <script>
+        Canny('identify', {
+            appID: '5ec828546e620253608f0d9e',
+            user: {
+                email: "no-reply@phppointofsale.com",
+                name: "John Doe",
+                id: "https:\/\/demo.phppointofsale.com\/|1"		  },
+        });
+
+        window.addEventListener('online', function()
+        {
+            $("#canny_feedback_container").show();
+        });
+
+        window.addEventListener('offline', function()
+        {
+            $("#canny_feedback_container").hide();
+        });
+
+    </script>
+
+    <style>
+        /* These are the default badge styles */
+        .Canny_BadgeContainer .Canny_Badge {
+            position: absolute;
+            top: 8px;
+            right: 2px;
+            border-radius: 10px;
+            background-color: red;
+            padding: 5px;
+            border: 1px solid white;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        moment.locale(LOCALE, {
+            week: { dow: 1 }
+        });
+
+        var SCREEN_WIDTH = $(window).width();
+        var SCREEN_HEIGHT = $(window).height();
+        COMMON_SUCCESS = "Success";
+        COMMON_ERROR = "Error";
+
+        bootbox.addLocale('ar', {
+            OK : 'حسنا',
+            CANCEL : 'إلغاء',
+            CONFIRM : 'تأكيد'
+        });
+
+        bootbox.addLocale('km', {
+            OK :'យល់ព្រម',
+            CANCEL : 'បោះបង់',
+            CONFIRM : 'បញ្ជាក់ការ'
+        });
+        bootbox.setLocale(LOCALE);
+        var RATE_LIMIT_IN_MS = 60*1000;
+        var NUMBER_OF_REQUESTS_ALLOWED = 120;
+        var NUMBER_OF_REQUESTS = 0;
+
+        setInterval(function()
+        {
+            NUMBER_OF_REQUESTS = 0;
+
+        }, RATE_LIMIT_IN_MS);
+
+        $.ajaxSetup ({
+            cache: false,
+            headers: { "cache-control": "no-cache" },
+            beforeSend: function canSendAjaxRequest()
+            {
+                var can_send = NUMBER_OF_REQUESTS < NUMBER_OF_REQUESTS_ALLOWED;
+                NUMBER_OF_REQUESTS++;
+                return can_send;
+            }
+        });
+
+        $(document).on('show.bs.modal','.bootbox.modal', function (e)
+        {
+            var isShown = ($(".bootbox.modal").data('bs.modal') || {}).isShown;
+            //If we have a dialog already don't open another one
+            if (isShown)
+            {
+                //Cleanup the dialog(s) that was added to dom
+                $('.bootbox.modal:not(:first)').remove();
+
+                //Prevent double modal from showing up
+                return e.preventDefault();
+            }
+        });
+
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
+        $.fn.editableform.buttons =
+            '<button tabindex="-1" type="submit" class="btn btn-primary btn-sm editable-submit">'+
+            '<i class="icon ti-check"></i>'+
+            '</button>'+
+            '<button tabindex="-1" type="button" class="btn btn-default btn-sm editable-cancel">'+
+            '<i class="icon ti-close"></i>'+
+            '</button>';
+
+        $.fn.editable.defaults.emptytext = "Empty";
+
+        $(document).ready(function()
+        {
+
+            $(".wrapper.mini-bar .left-bar").hover(
+                function() {
+                    $(this).parent().removeClass('mini-bar');
+                }, function() {
+                    $(this).parent().addClass('mini-bar');
+                }
+            );
+
+
+
+            $('.menu-bar').click(function(e){
+                e.preventDefault();
+                $(".wrapper").toggleClass('mini-bar');
+            });
+
+            //Ajax submit current location
+            $(".set_employee_current_location_id").on('click',function(e)
+            {
+                e.preventDefault();
+
+                var location_id = $(this).data('location-id');
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://demo.phppointofsale.com/index.php/home/set_employee_current_location_id',
+                    data: {
+                        'employee_current_location_id': location_id,
+                    },
+                    success: function(){
+                        window.location.reload(true);
+                    }
+                });
+
+            });
+
+            $(".set_employee_language").on('click',function(e)
+            {
+                e.preventDefault();
+
+                var language_id = $(this).data('language-id');
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://demo.phppointofsale.com/index.php/employees/set_language',
+                    data: {
+                        'employee_language_id': language_id,
+                    },
+                    success: function(){
+                        window.location.reload(true);
+                    }
+                });
+
+            });
+
+        });
+    </script>
+
+    <script src="//phppointofsale.com/js/iframeResizer.contentWindow.min.js"></script>
 </head>
 <body>
+<div class="modal fade hidden-print" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+<div class="modal fade hidden-print" id="myModalDisableClose" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static"></div>
 
-</body>
+<div class="wrapper mini-bar sales-bar">
+    <div class="left-bar hidden-print" >
+        <div class="admin-logo" style="">
+            <div class="logo-holder pull-left">
+                <img src="https://demo.phppointofsale.com/assets/img/header_logo.png" class="hidden-print logo" id="header-logo" alt="" />				</div>
+            <!-- logo-holder -->
+
+        </div>
+        <!-- admin-logo -->
+
+        <ul class="list-unstyled menu-parent" id="mainMenu">
+
+
+            <li  class="home">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/home" class="waves-effect waves-light">
+                    <i class="icon ti-dashboard"></i>
+                    <span class="text">Dashboard</span>
+                </a></li>
+            <li class="active customers">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/customers"  class="waves-effect waves-light">
+                    <i class="icon ti-user"></i>
+                    <span class="text">Customers</span>
+                </a>
+            </li>
+            <li class="items">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/items"  class="waves-effect waves-light">
+                    <i class="icon ti-harddrive"></i>
+                    <span class="text">Items</span>
+                </a>
+            </li>
+            <li class="item_kits">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/item_kits"  class="waves-effect waves-light">
+                    <i class="icon ti-harddrives"></i>
+                    <span class="text">Item Kits</span>
+                </a>
+            </li>
+            <li class="price_rules">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/price_rules"  class="waves-effect waves-light">
+                    <i class="ion-ios-pricetags-outline"></i>
+                    <span class="text">Price Rules</span>
+                </a>
+            </li>
+            <li class="suppliers">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/suppliers"  class="waves-effect waves-light">
+                    <i class="icon ti-download"></i>
+                    <span class="text">Suppliers</span>
+                </a>
+            </li>
+            <li class="reports">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/reports"  class="waves-effect waves-light">
+                    <i class="icon ti-bar-chart"></i>
+                    <span class="text">Reports</span>
+                </a>
+            </li>
+            <li class="receivings">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/receivings"  class="waves-effect waves-light">
+                    <i class="icon ti-cloud-down"></i>
+                    <span class="text">Receiving</span>
+                </a>
+            </li>
+            <li class="sales">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/sales"  class="waves-effect waves-light">
+                    <i class="icon ti-shopping-cart"></i>
+                    <span class="text">Sales</span>
+                </a>
+            </li>
+            <li class="deliveries">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/deliveries"  class="waves-effect waves-light">
+                    <i class="ion-android-car"></i>
+                    <span class="text">Deliveries</span>
+                </a>
+            </li>
+            <li class="expenses">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/expenses"  class="waves-effect waves-light">
+                    <i class="icon ti-money"></i>
+                    <span class="text">Expenses</span>
+                </a>
+            </li>
+            <li class="appointments">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/appointments"  class="waves-effect waves-light">
+                    <i class="ti-calendar"></i>
+                    <span class="text">Appointments</span>
+                </a>
+            </li>
+            <li class="employees">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees"  class="waves-effect waves-light">
+                    <i class="icon ti-id-badge"></i>
+                    <span class="text">Employees</span>
+                </a>
+            </li>
+            <li class="giftcards">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/giftcards"  class="waves-effect waves-light">
+                    <i class="icon ti-credit-card"></i>
+                    <span class="text">Gift Cards</span>
+                </a>
+            </li>
+            <li class="config">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/config"  class="waves-effect waves-light">
+                    <i class="icon ti-settings"></i>
+                    <span class="text">Store Config</span>
+                </a>
+            </li>
+            <li class="locations">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/locations"  class="waves-effect waves-light">
+                    <i class="icon ti-home"></i>
+                    <span class="text">Locations</span>
+                </a>
+            </li>
+            <li class="messages">
+                <a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/messages"  class="waves-effect waves-light">
+                    <i class="icon ti-email"></i>
+                    <span class="text">Messages</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://demo.phppointofsale.com/index.php/home/logout" tabindex="-1"><i class="icon ti-power-off"></i><span class="text">Logout</span></a>
+            </li>
+        </ul>
+    </div>
+    <!-- left-bar -->
+
+    <div class="content" id="content">
+        <div class="overlay hidden-print"></div>
+        <div class="top-bar hidden-print">
+            <nav class="navbar navbar-default top-bar">
+                <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
+                <div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs">
+                    <a  tabindex="-1"  href="https://demo.phppointofsale.com/index.php/home">Dashboard</a><a tabindex = "-1" class="current" href="https://demo.phppointofsale.com/index.php/customers">Customers</a>					</div>
+
+                <ul class="nav navbar-nav navbar-right top-elements">
+
+
+                    <!-- redirect($_SERVER['HTTP_REFERER']);	 -->
+                    <li class="dropdown">
+                        <a tabindex = "-1" href="#" class="dropdown-toggle language-dropdown" data-toggle="dropdown" role="button" aria-expanded="false"><img class=
+                                                                                                                                                                      "flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/english.png" alt=""> <span class="hidden-sm hidden-xs"> English</span><span class="drop-icon"><i class="ion ion-chevron-down"></i></span></a>
+                        <ul class="dropdown-menu animated fadeInUp wow language-drop neat_drop" data-wow-duration="1500ms" role="menu">
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="english" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/english.png" alt="flags">English</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="indonesia" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/indonesia.png" alt="flags">Indonesia</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="spanish" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/spanish.png" alt="flags">Español</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="french" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/french.png" alt="flags">Fançais</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="italian" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/italian.png" alt="flags">Italiano</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="german" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/german.png" alt="flags">Deutsch</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="dutch" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/dutch.png" alt="flags">Nederlands</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="portugues" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/portugues.png" alt="flags">Portugues</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="arabic" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/arabic.png" alt="flags">العَرَبِيةُ‎‎</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="khmer" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/khmer.png" alt="flags">Khmer</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="vietnamese" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/vietnamese.png" alt="flags">Vietnamese</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="chinese" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/chinese.png" alt="flags">中文</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="chinese_traditional" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/chinese_traditional.png" alt="flags">繁體中文</a></li>
+                            <li><a tabindex = "-1" href="https://demo.phppointofsale.com/index.php/employees/set_language/" data-language-id="tamil" class="set_employee_language"><img class="flag_img" src="https://demo.phppointofsale.com/assets/assets/images/flags/tamil.png" alt="flags">Tamil</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown hidden-xs" id="canny_feedback_container">
+                        <a class="hidden-xs" data-canny-changelog href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="ion-information icon-notification"></i></a>
+                    </li>
+
+                    <script>
+                        Canny('initChangelog', {
+                            appID: '5ec828546e620253608f0d9e',
+                            position: 'bottom',
+                            align: 'right',
+                        });
+
+                        if (navigator.onLine)
+                        {
+                            $("#canny_feedback_container").show();
+                        }
+                        else
+                        {
+                            $("#canny_feedback_container").hide();
+                        }
+
+                    </script>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="ion-ios-bell-outline  icon-notification"></i><span class="badge info-number count " id="unread_message_count">0</span></a>
+                        <ul class="dropdown-menu dropdown-menu-right animated fadeInUp wow message_drop neat_drop" data-wow-duration="1500ms" role="menu">
+                            <li class="bottom-links">
+                                <a href="https://demo.phppointofsale.com/index.php/messages" class="last_info">All Messages</a>
+                            </li>
+
+
+                            <li class="bottom-links">
+                                <a href="https://demo.phppointofsale.com/index.php/messages/sent_messages" class="last_info">Sent Messages</a>
+                            </li>
+
+                            <li class="bottom-links">
+                                <a href="https://demo.phppointofsale.com/index.php/messages/send_message" class="last_info">New Message</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a tabindex = "-1" href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false"><span class="avatar-holder">
+
+							<img src="https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg" alt="" /></span>
+
+                            <span class="avatar_info visible-sm visible-md visible-lg">John Doe</span></a>
+                        <ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop" data-wow-duration="1500ms"  role="menu">
+                            <li>
+                                <a tabindex = "-1" id="support_link" target="_blank" href="https://support.phppointofsale.com/"><i class="ion-help-buoy"></i><span class="text">Support/Documentation</span></a>
+                            </li>
+
+
+                            <li><a href="https://demo.phppointofsale.com/index.php/config" tabindex="-1"><i class="ion-android-settings"></i><span class="text">Settings</span></a></li>
+
+                            <li>
+                                <a tabindex = "-1" id="switch_user" href="https://demo.phppointofsale.com/index.php/login/switch_user/1" data-toggle="modal" data-target="#myModalDisableClose"><i class="ion-ios-toggle-outline"></i><span class="text">Switch User</span></a>
+                            </li>
+
+
+                            <li>
+                                <a tabindex = "-1" title="" href="https://demo.phppointofsale.com/index.php/home/edit_profile" data-toggle="modal" data-target="#myModal"><i class="ion-edit"></i><span class="text">Edit profile</span></a>
+                            </li>
+
+                            <li>
+                                <a href="https://demo.phppointofsale.com/index.php/home/logout" class="logout_button" tabindex="-1"><i class="ion-power"></i><span class="text">Logout</span></a>								</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- top-bar -->
+        <div class="main-content">
+            <script type="text/javascript">
+
+                function reload_people_table()
+                {
+                    clearSelections();
+                    $("#table_holder").load("https:\/\/demo.phppointofsale.com\/index.php\/customers\/reload_table");
+                }
+
+
+                $(document).ready(function()
+                {
+                    $("#location_id").select2({dropdownAutoWidth : true});
+
+                    $("#sortable").sortable({
+                        items : '.sort',
+                        containment: "#sortable",
+                        cursor: "move",
+                        handle: ".handle",
+                        revert: 100,
+                        update: function( event, ui ) {
+                            $input = ui.item.find("input[type=checkbox]");
+                            $input.trigger('change');
+                        }
+                    });
+
+                    $("#sortable").disableSelection();
+
+                    $("#config_columns a").on("click", function(e) {
+                        e.preventDefault();
+
+                        if($(this).attr("id") == "reset_to_default")
+                        {
+                            //Send a get request wihtout columns will clear column prefs
+                            $.get("https:\/\/demo.phppointofsale.com\/index.php\/customers\/save_column_prefs", function()
+                            {
+                                reload_people_table();
+                                var $checkboxs = $("#config_columns a").find("input[type=checkbox]");
+                                $checkboxs.prop("checked", false);
+
+                                $("#config_columns a").find('#'+"person_id").prop("checked", true);
+                                $("#config_columns a").find('#'+"full_name").prop("checked", true);
+                                $("#config_columns a").find('#'+"email").prop("checked", true);
+                                $("#config_columns a").find('#'+"phone_number").prop("checked", true);
+                            });
+                        }
+
+                        if(!$(e.target).hasClass("handle"))
+                        {
+                            var $checkboxs = $(this).find("input[type=checkbox]");
+                            $checkboxs.prop("checked", !$checkboxs.prop("checked")).trigger("change");
+                        }
+
+                        return false;
+                    });
+
+
+                    $("#config_columns input[type=checkbox]").change(
+                        function(e) {
+                            var columns = $("#config_columns input:checkbox:checked").map(function(){
+                                return $(this).val();
+                            }).get();
+
+                            $.post("https:\/\/demo.phppointofsale.com\/index.php\/customers\/save_column_prefs", {columns:columns}, function(json)
+                            {
+                                reload_people_table();
+                            });
+
+                        });
+
+                    enable_sorting("https://demo.phppointofsale.com/index.php/customers/sorting");
+                    enable_select_all();
+                    enable_checkboxes();
+                    enable_row_selection();
+                    enable_search('https://demo.phppointofsale.com/index.php/customers',"You have selected one or more rows, these will no longer be selected after your search. Are you sure you want to submit this search?");
+                    enable_email('https://demo.phppointofsale.com/index.php/customers/mailto');
+
+                    enable_delete("Are you sure you want to delete the selected customers?","You have not selected any customers to delete");
+
+                    enable_cleanup("Are you sure you want to clean ALL deleted customers? (This will remove account numbers from deleted customers so they can be reused)");
+
+
+                    $('#labels').click(function()
+                    {
+                        var selected = get_selected_values();
+                        if (selected.length == 0)
+                        {
+                            bootbox.alert("You must select at least one person for mmailing labels");
+                            return false;
+                        }
+
+                        $(this).attr('href','https://demo.phppointofsale.com/index.php/customers/mailing_labels/'+selected.join('~'));
+                    });
+
+                    $('#generate_barcodes').click(function()
+                    {
+                        var selected = get_selected_values();
+
+                        if (selected.length == 0)
+                        {
+                            bootbox.alert("You must select at least 1 item to generate barcodes");
+                            return false;
+                        }
+
+                        $("#skip-labels").modal('show');
+                        return false;
+                    });
+
+                    $("#generate_barcodes_form").submit(function()
+                    {
+                        var selected = get_selected_values();
+                        var num_labels_skip = $("#num_labels_skip").val() ? $("#num_labels_skip").val() : 0;
+                        var url = 'https://demo.phppointofsale.com/index.php/customers/generate_barcodes'+'/'+selected.join('~')+'/'+num_labels_skip;
+                        window.location = url;
+                        return false;
+                    });
+
+                    $('#generate_barcode_labels').click(function()
+                    {
+                        var selected = get_selected_values();
+                        if (selected.length == 0)
+                        {
+                            bootbox.alert("You must select at least 1 item to generate barcodes");
+                            return false;
+                        }
+
+                        $(this).attr('href','https://demo.phppointofsale.com/index.php/customers/generate_barcode_labels/'+selected.join('~'));
+                    });
+
+
+                    $('#merge').click(function()
+                    {
+                        var selected = get_selected_values();
+
+                        if (selected.length == 0)
+                        {
+                            bootbox.alert("You must select at least 1 item to generate barcodes");
+                            return false;
+                        }
+
+                        $("#customer_to_merge").empty();
+                        $.post("https:\/\/demo.phppointofsale.com\/index.php\/customers\/get_customers_info", {customers:selected}, function(json)
+                        {
+                            for(var k=0;k<json.length;k++)
+                            {
+                                var customer_person_id = json[k]['person_id'];
+                                var customer_name = json[k]['full_name'];
+                                $("#customer_to_merge").append('<option value='+customer_person_id+'>'+customer_name+'</option>')
+                            }
+                            $("#merge-customers").modal('show');
+                        },'json');
+
+                        return false;
+                    });
+
+                    $("#merge_customers_form").submit(function(e)
+                    {
+                        e.preventDefault();
+                        var selected = get_selected_values();
+
+                        $.post("https:\/\/demo.phppointofsale.com\/index.php\/customers\/merge_customers", {customers:selected,customer_to_merge:$("#customer_to_merge").val()}, function(json)
+                        {
+                            $("#merge-customers").modal('hide');
+                            show_feedback('success', "Merging Of Customers was successful", "Success");
+
+                            reload_people_table();
+                        });
+
+                    });
+
+
+                    $('#send_message').click(function()
+                    {
+
+                        var selected = get_selected_values();
+                        if (selected.length == 0)
+                        {
+                            bootbox.alert("You must select at least one person to send message");
+                            return false;
+                        }
+
+                        $("#sendMessage").modal('show');
+                        $('#sendMessage').on('shown.bs.modal', function() {
+                            $('#text_message').focus();
+                        });
+                        return false;
+                    });
+
+                    $("#send_message_form").submit(function()
+                    {
+                        var selected_persons = get_selected_values();
+                        console.log(selected_persons);
+                        var text_message = $("#text_message").val();
+
+                        $.each(selected_persons, function(i,param){
+                            $('<input />').attr('type', 'hidden')
+                                .attr('name', 'selected_persons[]')
+                                .attr('value', param)
+                                .appendTo('#send_message_form');
+                        });
+
+                        $.post('https://demo.phppointofsale.com/index.php/customers/send_message', $(this).serialize(), function(result){
+                            var res = JSON.parse(result);
+
+                            var message = '';
+
+                            $.each( res.response, function( i, val ) {
+                                message += val + "<br>";
+                            });
+
+                            if(message != ''){
+                                bootbox.alert(message);
+                                return false;
+                            }
+                            $("#text_message").val('');
+                            $("#sendMessage").modal('hide');
+                            show_feedback('success', "SMS sent successfully", "Success");
+
+                            var url = 'https://demo.phppointofsale.com/index.php/customers';
+                            setInterval(function(){ window.location = url; }, 1000);
+                            return false;
+                        });
+
+                        return false;
+                    });
+                });
+
+
+            </script>
+
+            <div class="modal fade skip-labels" id="skip-labels" role="dialog" aria-labelledby="skipLabels" aria-hidden="true">
+                <div class="modal-dialog customer-recent-sales">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="skipLabels">Number of labels to skip</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <form action="https://demo.phppointofsale.com/index.php/customers/generate_barcodes" id="generate_barcodes_form" autocomplete="off" method="post" accept-charset="utf-8">
+
+                                <input type="text" class="form-control text-center" name="num_labels_skip" id="num_labels_skip" placeholder="Number of labels to skip">
+                                <input type="submit" name="generate_barcodes_form" value="Submit"  class="btn btn-block btn-primary" />
+                            </form>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+
+            <div class="modal fade skip-labels" id="merge-customers" role="dialog" aria-labelledby="skipLabels" aria-hidden="true">
+                <div class="modal-dialog customer-recent-sales">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="skipLabels">Merge Customers</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <form action="https://demo.phppointofsale.com/index.php/customers/do_merge" id="merge_customers_form" autocomplete="off" method="post" accept-charset="utf-8">
+                                <label for="customer_to_merge">Merge Into</label>
+                                <select id="customer_to_merge" name="customer_to_merge" class="form form-control">
+                                </select>
+                                <br />
+
+                                <input type="submit" name="merge_customers_form" value="Submit"  class="btn btn-block btn-primary" />
+                            </form>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <!-- Modal to send SMS-->
+            <div class="modal fade send-message" id="sendMessage" role="dialog" aria-labelledby="sendMessageLabels" aria-hidden="true">
+                <div class="modal-dialog customer-recent-sales">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="sendMessageLabels">Write your message here</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="https://demo.phppointofsale.com/index.php/customers/send_message" id="send_message_form" autocomplete="off" method="post" accept-charset="utf-8">
+                                <!-- <label for="text_message">Write your message here</label>-->
+                                <textarea id="text_message" name="text_message" class="form-control" rows="10" required></textarea>
+                                <input type="submit" name="send_message_form" value="Submit"  class="btn btn-block btn-primary" />
+                            </form>	        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- Modal to send SMS end -->
+
+            <div class="manage_buttons">
+
+                <!-- Css Loader  -->
+                <div class="spinner" id="ajax-loader" style="display:none">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                </div>
+
+                <div class="manage-row-options hidden">
+                    <div class="email_buttons people">
+                        <a class="btn btn-primary btn-lg disabled email email_inactive" title="E-Mail" id="email" href="https://demo.phppointofsale.com/index.php/customers#" >
+                            <span class="ion-email"> E-Mail</span>
+                        </a>
+
+                        <a class="btn btn-primary btn-lg labels" title="Mailing Labels" id="labels" href="https://demo.phppointofsale.com/index.php/customers#" >
+                            <span class="ion-android-list"></span> <span class="hidden-xs">Mailing Labels</span>
+                        </a>
+
+
+                        <a href="https://demo.phppointofsale.com/index.php/customers/generate_barcode_labels" id="generate_barcode_labels" class="btn btn-primary btn-lg  disabled" title="Barcode Labels"><span class="ion-ios-barcode"></span> <span class="hidden-xs">Barcode Labels</span></a>		<a href="https://demo.phppointofsale.com/index.php/customers/generate_barcodes" id="generate_barcodes" class="btn btn-primary btn-lg  disabled" target="_blank" title="Barcode Sheet"><span class="ion-document"></span> <span class="hidden-xs">Barcode Sheet</span></a><a href="https://demo.phppointofsale.com/index.php/customers/merge" id="merge" class="btn btn-primary btn-lg  disabled" target="_blank" title="Merge"><span class="ion-document"></span> <span class="hidden-xs">Merge</span></a><a href="https://demo.phppointofsale.com/index.php/customers/send_sms" id="send_message" class="btn btn-primary btn-lg" target="_blank" title="Send SMS"><span class="ion-android-phone-portrait"></span> <span class="hidden-xs">Send SMS</span></a>
+                        <a href="https://demo.phppointofsale.com/index.php/customers/delete" id="delete" class="btn btn-red btn-lg disabled delete_inactive" title="Delete"><span class="ion-trash-a"></span> <span class="hidden-xs">Delete</span></a>
+                        <a href="#" class="btn btn-lg btn-clear-selection btn-warning"><span class="ion-close-circled"></span> <span class="hidden-xs">Clear Selection</span></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <form action="https://demo.phppointofsale.com/index.php/customers/search" id="search_form" autocomplete="off" method="post" accept-charset="utf-8">
+                            <div class="search no-left-border">
+                                <ul class="list-inline">
+                                    <li>
+                                        <input type="text" class="form-control" name ='search' id='search' value="" placeholder="Search Customers"/>
+                                    </li>
+
+                                    <li>
+                                        <button type="submit" class="btn btn-primary btn-lg"><span class="ion-ios-search-strong"></span><span class="hidden-xs hidden-sm"> Search</span></button>
+                                    </li>
+                                    <li>
+                                        <div class="clear-block hidden">
+                                            <a class="clear" href="https://demo.phppointofsale.com/index.php/customers/clear_state">
+                                                <i class="ion ion-close-circled"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="buttons-list">
+                            <div class="pull-right-btn">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/-1/" id="new-person-btn" class="btn btn-primary btn-lg hidden-sm hidden-xs" title="New Customer"><span class="ion-plus"> New Customer</span></a>
+                                <div class="piluku-dropdown btn-group">
+                                    <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span class="hidden-xs ion-android-more-horizontal"> </span>
+                                        <i class="visible-xs ion-android-more-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+
+                                        <li class="visible-sm visible-xs">
+                                            <a href="https://demo.phppointofsale.com/index.php/customers/view/-1/" class="" title="New Customer"><span class="ion-plus-round"> Add New Customer</span></a>								</li>
+                                        <li>
+                                            <a href="https://demo.phppointofsale.com/index.php/customers/excel_import/" class="hidden-xs" title="Excel Import"><span class="ion-ios-download-outline"> Excel Import</span></a>								</li>
+
+
+                                        <li>
+                                            <a href="https://demo.phppointofsale.com/index.php/customers/excel_export" class="hidden-xs import" title="Excel Export"><span class="ion-ios-upload-outline"> Excel Export</span></a>								</li>
+                                        <li>
+                                            <a href="https://demo.phppointofsale.com/index.php/customers/cleanup" id="cleanup" class="" title="Cleanup old customers"><span class="ion-loop"> Cleanup old customers</span></a>								</li>
+                                        <li>
+                                            <a href="https://demo.phppointofsale.com/index.php/customers/custom_fields" id="custom_fields" class="" title="Custom Field Configuration"><span class="ion-wrench"> Custom Field Configuration</span></a>								</li>
+
+                                        <li>
+                                            <a href="https://demo.phppointofsale.com/index.php/customers/toggle_show_deleted/1" class="toggle_deleted" title="Manage Deleted Customers"><span class="ion-trash-a"> Manage Deleted Customers</span></a>								</li>
+
+
+                                        <li>
+                                            <a href="https://demo.phppointofsale.com/index.php/permission_templates" id="permission_templates" title="Permission Templates"><span class="ion-ios-list-outline"> Permission Templates</span></a>								</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row manage-table">
+                    <div class="panel panel-piluku">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Customers					<span title="11 total customers" class="badge bg-primary tip-left" id="manage_total_items">11</span>
+
+                                <form id="config_columns">
+                                    <div class="piluku-dropdown btn-group table_buttons pull-right m-left-20">
+                                        <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="ion-gear-a"></i>
+                                        </button>
+
+                                        <ul id="sortable" class="dropdown-menu dropdown-menu-left col-config-dropdown" role="menu">
+
+                                            <li class="dropdown-header"><a id="reset_to_default" class="pull-right"><span class="ion-refresh"></span> Reset</a>Column Configuration</li>
+
+                                            <li class="sort"><a><input checked ="checked"  name="selected_columns[]" type="checkbox" class="columns" id="person_id" value="person_id"><label class="sortable_column_name" for="person_id"><span></span>Person ID</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input checked ="checked"  name="selected_columns[]" type="checkbox" class="columns" id="full_name" value="full_name"><label class="sortable_column_name" for="full_name"><span></span>Name</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input checked ="checked"  name="selected_columns[]" type="checkbox" class="columns" id="email" value="email"><label class="sortable_column_name" for="email"><span></span>E-Mail</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input checked ="checked"  name="selected_columns[]" type="checkbox" class="columns" id="phone_number" value="phone_number"><label class="sortable_column_name" for="phone_number"><span></span>Phone Number</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="first_name" value="first_name"><label class="sortable_column_name" for="first_name"><span></span>First Name</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="last_name" value="last_name"><label class="sortable_column_name" for="last_name"><span></span>Last Name</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="company_name" value="company_name"><label class="sortable_column_name" for="company_name"><span></span>Company Name</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="account_number" value="account_number"><label class="sortable_column_name" for="account_number"><span></span>Account #</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="comments" value="comments"><label class="sortable_column_name" for="comments"><span></span>Comments</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="balance" value="balance"><label class="sortable_column_name" for="balance"><span></span>Balance</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="credit_limit" value="credit_limit"><label class="sortable_column_name" for="credit_limit"><span></span>Credit limit</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="disable_loyalty" value="disable_loyalty"><label class="sortable_column_name" for="disable_loyalty"><span></span>Disable Loyalty</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="points" value="points"><label class="sortable_column_name" for="points"><span></span>Points</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="current_spend_for_points" value="current_spend_for_points"><label class="sortable_column_name" for="current_spend_for_points"><span></span>Amount to spend for next point</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="current_sales_for_discount" value="current_sales_for_discount"><label class="sortable_column_name" for="current_sales_for_discount"><span></span>Sales Until Discount</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="address_1" value="address_1"><label class="sortable_column_name" for="address_1"><span></span>Address 1</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="address_2" value="address_2"><label class="sortable_column_name" for="address_2"><span></span>Address 2</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="city" value="city"><label class="sortable_column_name" for="city"><span></span>City</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="state" value="state"><label class="sortable_column_name" for="state"><span></span>State/Province</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="zip" value="zip"><label class="sortable_column_name" for="zip"><span></span>Zip</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="country" value="country"><label class="sortable_column_name" for="country"><span></span>Country</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="override_default_tax" value="override_default_tax"><label class="sortable_column_name" for="override_default_tax"><span></span>Override Default Tax For Sale</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="taxable" value="taxable"><label class="sortable_column_name" for="taxable"><span></span>Taxable</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="name" value="name"><label class="sortable_column_name" for="name"><span></span>Tier Name</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="internal_notes" value="internal_notes"><label class="sortable_column_name" for="internal_notes"><span></span>Internal Notes</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="auto_email_receipt" value="auto_email_receipt"><label class="sortable_column_name" for="auto_email_receipt"><span></span>Auto Email Receipt</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="always_sms_receipt" value="always_sms_receipt"><label class="sortable_column_name" for="always_sms_receipt"><span></span>Always SMS Receipt</label><span class="handle ion-drag"></span></a></li>
+                                            <li class="sort"><a><input  name="selected_columns[]" type="checkbox" class="columns" id="custom_field_1_value" value="custom_field_1_value"><label class="sortable_column_name" for="custom_field_1_value"><span></span>hey</label><span class="handle ion-drag"></span></a></li>
+
+                                        </ul>
+                                    </div>
+                                </form>
+
+
+                                <span class="panel-options custom">
+							<div class="pagination pagination-top hidden-print  text-center" id="pagination_top">
+
+							</div>
+					</span>
+                            </h3>
+                        </div>
+                        <div class="panel-body nopadding table_holder table-responsive" id="table_holder">
+                            <table class="table tablesorter table-hover" id="sortable_table"><thead><tr><th data-sort-column='' class='leftmost'><input type="checkbox" id="select_all" /><label for="select_all"><span></span></label></th><th data-sort-column=''>Actions</th><th data-sort-column='pid'>Person ID</th><th data-sort-column='full_name'>Name</th><th data-sort-column='email'>E-Mail</th><th data-sort-column='phone_number'>Phone Number</th><th data-sort-column='' class='rightmost'>&nbsp;</th></tr></thead><tbody><tr><td><input type='checkbox' id='customers_9' value='9'/><label for='customers_9'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/9/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/9" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>9</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=9&sale_type=all&export_excel=0" class="underline">name Bengtsson </a></td><td><a href="mailto:" class="underline"></a></td><td></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='name Bengtsson ' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_12' value='12'/><label for='customers_12'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/12/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/12" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>12</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=12&sale_type=all&export_excel=0" class="underline">Ahhhhhh </a></td><td><a href="mailto:" class="underline"></a></td><td><a href="tel:2273489761">2273489761</a></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='Ahhhhhh ' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_13' value='13'/><label for='customers_13'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/13/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/13" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>13</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=13&sale_type=all&export_excel=0" class="underline">Ahmed </a></td><td><a href="mailto:" class="underline"></a></td><td><a href="tel:0559934724">0559934724</a></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='Ahmed ' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_14' value='14'/><label for='customers_14'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/14/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/14" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>14</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=14&sale_type=all&export_excel=0" class="underline">hfhfh </a></td><td><a href="mailto:" class="underline"></a></td><td></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='hfhfh ' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_15' value='15'/><label for='customers_15'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/15/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/15" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>15</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=15&sale_type=all&export_excel=0" class="underline">sssss </a></td><td><a href="mailto:" class="underline"></a></td><td></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='sssss ' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_2' value='2'/><label for='customers_2'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/2/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/2" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>2</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=2&sale_type=all&export_excel=0" class="underline">yahye  abdi nour</a></td><td><a href="mailto:yaxye450@gmail.com" class="underline">yaxye450@gmail.com</a></td><td><a href="tel:+252615178892">+252615178892</a></td><td><a href='https://demo.phppointofsale.com/index.php/app_files/view/1?timestamp=1605437076' class='rollover'><img src='https://demo.phppointofsale.com/index.php/app_files/view/1?timestamp=1605437076' alt='yahye  abdi nour' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_10' value='10'/><label for='customers_10'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/10/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/10" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>10</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=10&sale_type=all&export_excel=0" class="underline">Bob  Brown</a></td><td><a href="mailto:" class="underline"></a></td><td></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='Bob  Brown' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_5' value='5'/><label for='customers_5'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/5/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/5" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>5</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=5&sale_type=all&export_excel=0" class="underline">KEvin moenga</a></td><td><a href="mailto:akash@gmail.com" class="underline">akash@gmail.com</a></td><td><a href="tel:0723947548">0723947548</a></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='KEvin moenga' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_11' value='11'/><label for='customers_11'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/11/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/11" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>11</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=11&sale_type=all&export_excel=0" class="underline">Christopher Muench</a></td><td><a href="mailto:me@chrismuench.com" class="underline">me@chrismuench.com</a></td><td><a href="tel:5858806599">5858806599</a></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='Christopher Muench' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_16' value='16'/><label for='customers_16'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/16/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/16" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>16</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=16&sale_type=all&export_excel=0" class="underline">MOIRA  ROSE</a></td><td><a href="mailto:MROS@SC.COM" class="underline">MROS@SC.COM</a></td><td><a href="tel:555.666.7777">555.666.7777</a></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='MOIRA  ROSE' class='img-polaroid' width='45' /></a></td></tr><tr><td><input type='checkbox' id='customers_8' value='8'/><label for='customers_8'><span></span></label></td><td class="actions"><div class="piluku-dropdown dropdown btn-group table_buttons upordown">
+                                <a href="https://demo.phppointofsale.com/index.php/customers/view/8/2" role="button" class="btn btn-more edit_action">Edit</a>
+                                <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="ion-more"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left " role="menu"><li><a href="https://demo.phppointofsale.com/index.php/customers/redeem_series/8" class="" title="Redeem Series"><i class="ion-cash"></i> Redeem Series</a></li></ul>
+                            </div></td><td>8</td><td><a href="https://demo.phppointofsale.com/index.php/reports/generate/specific_customer?report_type=complex&report_date_range_simple=CUSTOM&start_date=2019-11-18&start_date_formatted=11/18/2019 12:00 am&end_date=2020-11-18%2023:59:59&end_date_formatted=11/18/2020 12:00 am&customer_id=8&sale_type=all&export_excel=0" class="underline">someone sam</a></td><td><a href="mailto:Invoice@someone.dot" class="underline">Invoice@someone.dot</a></td><td><a href="tel:8934823894982">8934823894982</a></td><td><a href='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' class='rollover'><img src='https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg' alt='someone sam' class='img-polaroid' width='45' /></a></td></tr></tbody></table>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pagination hidden-print alternate text-center" id="pagination_bottom" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footers" class="col-md-12 hidden-print text-center">
+                Please visit our			<a tabindex="-1" href="http://phppointofsale.com" target="_blank">Website</a> to learn the latest information about the project.
+                <span class="text-info">You are using PHP Point Of Sale Version <span class="badge bg-primary"> 17.8</span></span> Built on 11/17/2020 06:21 pm EST		</div>
+        </div>
+        <!---content -->
+    </div> <!-- wrapper -->
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"653e27187f","applicationID":"413349729,413352636","transactionName":"bwdVbUoEVhcAAUUMDlZNdlpMDFcKTiFEFhVXD1JLS0pRCgUHSQ==","queueTime":0,"applicationTime":144,"atts":"Q0BWGwIeRRk=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+
 </html>
