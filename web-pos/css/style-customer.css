@@ -49,5 +49,46 @@ body {
     color: inherit;
 
 }
+#btnDashboard{
+    position: relative;
+    border: none;
+    background-color: transparent;
+    width: 200px;
+    text-align: left;
+}
+.nav-item button{
+    border: none;
+    background-color: transparent;
+    width: 200px;
+    text-align: left;
+}
+.input div{
+    height: 50px;
+    width: 200px;
+
+    background-color: #007bff;
+}
+.input{
+    display: flex;
+    position: relative;
+    width: 850px;
+    height: 30px;
+    align-content: space-between;
+    justify-content: space-between;
+}
+#btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 100px;
+}
+#btn button{
+    width: 90px;
+    height: 25px ;
+    border: none;
+    background-color: #999999;
+}
+
 
 
