@@ -81,77 +81,22 @@ body {
     border-radius: 0;
     border-right-width: 0;
     border-color: gray;
-
-}
-.flatRed {
-    background-color: gray;
-}
-.flatGreen {
-    background-color: gray;
 }
 
-.dashboard-stats {
-    background-color: lightgrey;
+.input>div{
     position: relative;
-    min-height: 107px;
-    padding: 3px;
-    padding-left: 5%;
-    border-radius: 2px;
-    display: table;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 10px;
-
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 250px;
+    background-color: #007bff;
 }
-
-@media only screen and (max-width: 767px) {
-    .top-bar img.flag_img {
-        width: 20px !important;
-    }
-    .top-bar .search {
-        margin: 10px auto;
-    }
-    .top-bar .search input {
-        height: 30px;
-    }
-    .top-bar .info-number.bell {
-        background-color: #fb5d5d;
-    }
+.input{
+display: flex;
 }
-@media only screen and (min-width: 1000px) and (max-width: 1400px) {
-    .dashboard-stats .left {
-        float: left;
-        padding-top: 5px;
-
-    }
-    .dashboard-stats .left h3 {
-        font-size: 20px;
-
-    }
-    .dashboard-stats .left h4 {
-        font-size: 14px;
-
-    }
-    .dashboard-stats .right {
-        position: absolute;
-        right: 3px;
-        top: 3px;
-        width: 40%;
-        bottom: 3px;
-        border-radius: 2px;
-        font-size: 38px;
-        text-align: center;
-        color: #FFFFFF;
-
-    }
-    .dashboard-stats .right i {
-        vertical-align: middle;
-        line-height: 107px;
-    }
+.input *:first-child{
+    background-color: #999999;
 }
-
-
-#to-align{
-    margin-top: 10px;
-
+.input *:nth-child(3){
+    background-color: #999999;
 }
