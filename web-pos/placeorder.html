@@ -1,10 +1,153 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Dashboard Template · Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style-placeorder.css" rel="stylesheet">
 </head>
 <body>
+
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Web POS</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <span data-feather="home"></span>
+                            <form action="index.html" method="get">
+                                <button type="submit" id="btnDashboard" name="dashboard">Dashboard</button>
+                            </form>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <form action="managecustomer.html" method="get">
+                                <button type="submit" id="btnCustomer" name="customer">Manage Customers</button>
+                            </form>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <form action="manageitems.html" method="get">
+                                <button type="submit" id="btnItem" name="item"> Item Details</button>
+                            </form>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <form action="Searchorders.html" method="get">
+                                <button type="submit" id="btnSearch" name="search">Search Order</button>
+                            </form>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <form action="placeorder.html" method="get">
+                                <button type="submit" id="btnPlaceOrder" name="placeOrder"> Place Order</button>
+                            </form>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Place Order</h1>
+            </div>
+
+            <form>
+                <p3>Customer Details</p3>
+                <div class="input">
+                    <select name="cmbCustomers" id="customer-cmb">
+                    <option value="">C-001</option>
+                    <option selected value="">C-002</option>
+                    </select>
+                    <input type="text" id="cname" name="customer-name" value="Name">
+                    <input type="text" id="caddress" name="customer-address" value="Address">
+                    <input type="text" id="csalary" name="customer-salary" value="Enter Salary">
+                    <form action="managecustomer.html" method="get">
+                        <button type="submit" id="btnnewCustomer" name="newCustomer">New Customer</button>
+                    </form>
+
+
+
+                </div>
+                 <p3>Item Details</p3>
+                <div class="input">
+                    <select name="cmbitem" id="item-cmb">
+                        <option value="">i-01</option>
+                        <option selected value="">i-02</option>
+                    </select>
+                    <input type="text" id="idescription" name="description" value="Description">
+                    <input type="text" id="iqty" name="qty" value="Qty on Hand">
+                    <input type="text" id="iunitprice" name="unitprice" value="Unit Price">
+                </div>
+                <div id="btn">
+                    <button type="submit" id="btnSave" name="save">Save</button>
+                    <button type="submit" id="btnUpdate" name="update">Update</button>
+                </div>
+            </form>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Address </th>
+                        <th>Salary</th>
+                        <th>Operation</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>C-001</td>
+                        <td>Amal</td>
+                        <td>Colombo</td>
+                        <td>1500</td>
+
+                    </tr>
+                    <tr>
+                        <td>C-002</td>
+                        <td>Nimal</td>
+                        <td>Panadura</td>
+                        <td>2500</td>
+                    </tr>
+                    <tr>
+                        <td>C-003</td>
+                        <td>Kamal</td>
+                        <td>Colombo</td>
+                        <td>2500</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+
 
 </body>
 </html>
