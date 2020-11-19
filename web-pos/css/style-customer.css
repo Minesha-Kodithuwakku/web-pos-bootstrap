@@ -1,17 +1,7 @@
 body {
+    position: relative;
     font-size: .875rem;
 }
-
-.feather {
-    width: 16px;
-    height: 16px;
-    vertical-align: text-bottom;
-
-}
-
-/*
- * Sidebar
- */
 
 .sidebar {
     position: fixed;
@@ -54,49 +44,10 @@ body {
 
 }
 
-.sidebar .nav-link .feather {
-    margin-right: 4px;
-    color: #999;
-
-}
-
-.sidebar .nav-link.active {
-    color: #007bff;
-
-}
-
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
     color: inherit;
 
 }
 
-.sidebar-heading {
-    font-size: .75rem;
-    text-transform: uppercase;
 
-}
-.input-group .input-group-addon {
-    background-color: transparent;
-    border-radius: 0;
-    border-right-width: 0;
-    border-color: gray;
-}
-
-.input>div{
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 50px;
-    width: 250px;
-    background-color: #007bff;
-}
-.input{
-display: flex;
-}
-.input *:first-child{
-    background-color: #999999;
-}
-.input *:nth-child(3){
-    background-color: #999999;
-}
