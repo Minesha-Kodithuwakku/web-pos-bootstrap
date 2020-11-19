@@ -1,18 +1,11 @@
 body {
     font-size: .875rem;
 }
-
 .feather {
     width: 16px;
     height: 16px;
     vertical-align: text-bottom;
-
 }
-
-/*
- * Sidebar
- */
-
 .sidebar {
     position: fixed;
     top: 0;
@@ -21,16 +14,12 @@ body {
     z-index: 100; /* Behind the navbar */
     padding: 48px 0 0; /* Height of navbar */
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-
 }
-
 @media (max-width: 767.98px) {
     .sidebar {
         top: 5rem;
-
     }
 }
-
 .sidebar-sticky {
     position: relative;
     top: 0;
@@ -39,49 +28,36 @@ body {
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
-
 @supports ((position: -webkit-sticky) or (position: sticky)) {
     .sidebar-sticky {
         position: -webkit-sticky;
         position: sticky;
-
     }
 }
-
 .sidebar .nav-link {
     font-weight: 500;
     color: #333;
-
 }
-
 .sidebar .nav-link .feather {
     margin-right: 4px;
     color: #999;
-
 }
-
 .sidebar .nav-link.active {
     color: #007bff;
-
 }
-
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
     color: inherit;
-
 }
-
 .sidebar-heading {
     font-size: .75rem;
     text-transform: uppercase;
-
 }
 .input-group .input-group-addon {
     background-color: transparent;
     border-radius: 0;
     border-right-width: 0;
     border-color: gray;
-
 }
 .flatRed {
     background-color: gray;
@@ -89,7 +65,6 @@ body {
 .flatGreen {
     background-color: gray;
 }
-
 .dashboard-stats {
     background-color: lightgrey;
     position: relative;
@@ -101,9 +76,7 @@ body {
     width: 100%;
     text-align: left;
     margin-bottom: 10px;
-
 }
-
 @media only screen and (max-width: 767px) {
     .top-bar img.flag_img {
         width: 20px !important;
@@ -122,19 +95,13 @@ body {
     .dashboard-stats .left {
         float: left;
         padding-top: 5px;
-
     }
-
     .dashboard-stats .left h3 {
         font-size: 20px;
-
     }
-
     .dashboard-stats .left h4 {
         font-size: 14px;
-
     }
-
     .dashboard-stats .right {
         position: absolute;
         right: 3px;
@@ -145,17 +112,16 @@ body {
         font-size: 38px;
         text-align: center;
         color: #FFFFFF;
-
     }
-
     .dashboard-stats .right i {
         vertical-align: middle;
         line-height: 107px;
     }
 }
-
 #to-align{
     margin-top: 10px;
 }
-
-
+.nav-item button{
+    border: none;
+    background-color: transparent;
+}
