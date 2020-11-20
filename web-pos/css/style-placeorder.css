@@ -64,7 +64,7 @@ body {
 .input{
     display: flex;
     position: relative;
-    width: 900px;
+    width: 1000px;
     height: 30px;
     align-content: space-between;
     justify-content: space-between;
@@ -72,13 +72,22 @@ body {
 #btn{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 200px;
+   justify-content: space-between;
+    width: 1000px;
     height: 100px;
 }
-#btn button{
-    width: 90px;
+#btn div{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
     height: 25px ;
-    border: none;
+
+}
+#btn input{
+    width: 100px;
+}
+#leftbtn button{
+    width: 150px;
+    height: 30px;
     background-color: #999999;
 }

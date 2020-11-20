@@ -77,7 +77,7 @@
                 <h1 class="h2">Place Order</h1>
             </div>
 
-            <form>
+
                 <p3>Customer Details</p3>
                 <div class="input">
                     <select name="cmbCustomers" id="customer-cmb">
@@ -87,11 +87,6 @@
                     <input type="text" id="cname" name="customer-name" value="Name">
                     <input type="text" id="caddress" name="customer-address" value="Address">
                     <input type="text" id="csalary" name="customer-salary" value="Enter Salary">
-                    <form action="managecustomer.html" method="get">
-                        <button type="submit" id="btnnewCustomer" name="newCustomer">New Customer</button>
-                    </form>
-
-
 
                 </div>
                  <p3>Item Details</p3>
@@ -101,45 +96,49 @@
                         <option selected value="">i-02</option>
                     </select>
                     <input type="text" id="idescription" name="description" value="Description">
-                    <input type="text" id="iqty" name="qty" value="Qty on Hand">
+                    <input type="text" id="iqtyonhand" name="qty" value="Qty on Hand">
                     <input type="text" id="iunitprice" name="unitprice" value="Unit Price">
                 </div>
+            
                 <div id="btn">
-                    <button type="submit" id="btnSave" name="save">Save</button>
-                    <button type="submit" id="btnUpdate" name="update">Update</button>
+                    <input type="text" id="iqty" name="qty" value="Qty">
+                    <div id="leftbtn">
+                        <button type="submit" id="btnaddtocart" name="addtocart">Add to Cart</button>
+                        <form action="managecustomer.html" method="get">
+                            <button type="submit" id="btn-newCustomer" name="add-newCustomer">+New Customer</button>
+                        </form>
+                    </div>
                 </div>
-            </form>
 
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
                     <tr>
-                        <th>Customer ID</th>
-                        <th>Customer Name</th>
-                        <th>Address </th>
-                        <th>Salary</th>
-                        <th>Operation</th>
+                        <th>Item Code</th>
+                        <th>Description</th>
+                        <th>Qty on Hand</th>
+                        <th>Qty</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                        <th>Operate</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>C-001</td>
-                        <td>Amal</td>
-                        <td>Colombo</td>
-                        <td>1500</td>
-
+                        <td>i-01</td>
+                        <td>dbljfhd</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>100</td>
+                        <td>500</td>
                     </tr>
                     <tr>
-                        <td>C-002</td>
-                        <td>Nimal</td>
-                        <td>Panadura</td>
-                        <td>2500</td>
-                    </tr>
-                    <tr>
-                        <td>C-003</td>
-                        <td>Kamal</td>
-                        <td>Colombo</td>
-                        <td>2500</td>
+                        <td>i-02</td>
+                        <td>dbljfhd</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>100</td>
+                        <td>500</td>
                     </tr>
                     </tbody>
                 </table>
