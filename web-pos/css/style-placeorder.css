@@ -91,3 +91,44 @@ body {
     height: 30px;
     background-color: #999999;
 }
+#footer{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 560px;
+    left: 250px;
+    height: 50px;
+    width: 1000px;
+}
+#total-footer{
+    display: flex;
+    width: 200px;
+    height: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+#total-footer #total-label{
+    width: 30px;
+    height: 30px;
+}
+#total-footer #txtTotal{
+    width: 150px;
+    height: 30px;
+
+}
+#btn-footer-placeorder{
+    width: 150px;
+    height: 30px;
+    background-color: gray;
+}
+#top{
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+}
+#order-id, #top-date, #top-time{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}

@@ -76,7 +76,25 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Place Order</h1>
             </div>
+            <div id="top">
+                <div id="order-id">
+                    <div id="label-id">Order ID</div>
+                    <input type="text" id="txtOrderId" name="OrderId" value="OrderId">
+                </div>
+                <div id="top-date">
+                    <div id="label-date">Date</div>
+                    <input type="text" id="txtDate" name="date" value="date">
+                </div>
+                <div id="top-time">
+                    <div id="label-time">Time</div>
+                    <input type="text" id="txttime" name="time" value="time">
+                </div>
 
+
+            </div>
+
+
+                <hr>
 
                 <p3>Customer Details</p3>
                 <div class="input">
@@ -144,6 +162,15 @@
                 </table>
             </div>
         </main>
+        <div id="footer">
+            <div id="total-footer">
+                <div id="total-label">Total</div>
+                <input type="text" id="txtTotal" name="total" value="total">
+            </div>
+            <form>
+                <button type="submit" id="btn-footer-placeorder" name="footer-placeorder">Place Order</button>
+            </form>
+        </div>
     </div>
 </div>
 
